@@ -1,0 +1,9 @@
+project: savantenvs/sherpa-onnx
+target: fuzz_circular_buffer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_circular_buffer/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_circular_buffer
+    libfuzzer: true
+    timeout: 30

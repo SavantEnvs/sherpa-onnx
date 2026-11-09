@@ -1,0 +1,10 @@
+project: savantenvs/sherpa-onnx
+target: fuzz_text_utils
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_text_utils/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_text_utils
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_text_utils/fuzz_text_utils.dict
